@@ -17,7 +17,9 @@
     "node_modules/angular2/ts/typings/node/node.d.ts",
     "node_modules/angular2/typings/browser.d.ts",
     "./app/ts/app.ts",
-    "./app/ts/services/SpotifyService.ts"
+    "./app/ts/services/SpotifyService.ts",
+    "./app/ts/components/TrackComponent.ts",
+    "./app/ts/components/SearchComponent.ts"
   ],
   "compileOnSave": false,
   "buildOnSave": false,
