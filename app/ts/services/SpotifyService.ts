@@ -8,12 +8,27 @@ export class SpotifyService {
     constructor(public http: Http) {
     }
     
-    searchByTrack(query: string) {
-        let params: string = [
+    query(URL: string, params?: Array<string>): Observable<any[]> {
+        let queryURL: string = `${SpotifyService.BASE_URL}${URL}`;
+        if (params) {
+            queryURL = `${queryURL}?${params.join('&')}`;
+        }
+        
+        return this.http.request(queryURL).map((res: any) => res.join());
+    }
+    
+    search(query: string, type: string): Observable<any[]> {
+        return this.query(`/search`, [
             `q=${query}`,
-            `type=track`
-        ].join("&");
-        let queryURL: string = `https://api.spotify.com/v1/search?${params}`;
-        return this.http.request(queryURL).map(res => res.json());
+            `type=${type}`
+        ]);
+    }
+    
+    searchByTrack(query: string) {
+       return this.search(query, 'track');
+    }
+    
+    getTrack(id: string): Observable<any[]> {
+        return this.query(`/tracks/${id}`);
     }
 }
