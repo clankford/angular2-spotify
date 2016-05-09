@@ -19,7 +19,8 @@
     "./app/ts/app.ts",
     "./app/ts/services/SpotifyService.ts",
     "./app/ts/components/TrackComponent.ts",
-    "./app/ts/components/SearchComponent.ts"
+    "./app/ts/components/SearchComponent.ts",
+    "./app/ts/components/AlbumComponent.ts"
   ],
   "compileOnSave": false,
   "buildOnSave": false,
