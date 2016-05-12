@@ -11,7 +11,11 @@ import {
     Router,
     RouteConfig
 } from 'angular2/router';
-import { LocationStrategy, HashLocationStrategy, APP_BASE_HREF } from 'angular2/platform/common';
+import {
+    LocationStrategy,
+    HashLocationStrategy,
+    APP_BASE_HREF
+} from 'angular2/platform/common';
 import { SearchComponent } from './components/SearchComponent';
 import { ArtistComponent } from './components/ArtistComponent';
 import { TrackComponent } from './components/TrackComponent';
@@ -33,8 +37,8 @@ import { SPOTIFY_PROVIDERS } from './services/SpotifyService';
     { path: '/albums/:id', name: 'Albums', component: AlbumComponent }
 ])
 class SpotifyApp {
-    //query: string;
-    
+    // query: string;
+
     constructor(public router: Router) {
     }
 }

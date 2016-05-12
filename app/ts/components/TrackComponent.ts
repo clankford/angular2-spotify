@@ -26,22 +26,22 @@ import { SpotifyService } from '../services/SpotifyService';
 export class TrackComponent implements OnInit {
     id: string;
     track: Object;
-    
+
     constructor(public routeParams: RouteParams, public spotify: SpotifyService,
-                public locationStrategy: LocationStrategy){
-        this.id = routeParams.get('id');                
+                public locationStrategy: LocationStrategy) {
+        this.id = routeParams.get('id');
     }
-    
+
     ngOnInit(): void {
         this.spotify
             .getTrack(this.id)
             .subscribe((res: any) => this.renderTrack(res));
     }
-    
+
     back(): void {
         this.locationStrategy.back();
     }
-    
+
     renderTrack(res: any): void {
         this.track = res;
     }

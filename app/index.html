@@ -1,18 +1,22 @@
 <!doctype html>
 <html>
   <head>
-    <title>Spotify Integration</title>
+    <title>ng-book 2: Angular 2 Router</title>
+
+    {% for (var css in o.htmlWebpackPlugin.files.css) { %}
+      <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
+    {% } %}
   </head>
-  <body>
-    <div>
-      <div>
-        <h1>Spotify</h1>
+  <body class="container-fullwidth">
+    <div class="page-header">
+      <div class="container">
+        <h1>Spotify <small>Spotify & Routers</small></h1>
       </div>
     </div>
 
     <div id="content">
-      <div>
-        <router-app></router-app>
+      <div class="container">
+        <spotify-app></spotify-app>
       </div>
     </div>
 
